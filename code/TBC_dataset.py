@@ -25,7 +25,6 @@ class TBC_Bench_Single_Story(Dataset):
         device='cuda', 
         caption_dir='',
         ):
-        # 处理数据集
         self.data_root = data_root
         self.tokenizer = tokenizer
         self.resolution = resolution
@@ -163,7 +162,6 @@ class BenchMark_Each_ClassConstrains(Dataset):
         random_flip=True,
         max_char = 3,
         ):
-        # 处理数据集
         self.data_root = data_root
         self.tokenizer = tokenizer
         self.image_dir = glob(os.path.join(data_root, 'image/*/*.png'))
@@ -323,7 +321,6 @@ class Benchmark_Eval_ClassConstrains(Dataset):
         max_char = 2,
         device='cuda', 
         ):
-        # 处理数据集
         self.data_root = data_root
         self.tokenizer = tokenizer
         self.resolution = resolution
