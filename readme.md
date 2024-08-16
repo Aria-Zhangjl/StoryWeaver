@@ -38,8 +38,8 @@ bash sample.sh
 
 #### Single-Character Story Visualization
 
-<img src="figure/single.png" style="zoom:67%;" />
+<img src="visualization/single.png" style="zoom:67%;" />
 
 #### Multi-Character Story Visualization
 
-<img src="figure/multi.png" style="zoom: 67%;" />
+<img src="visualization/multi.png" style="zoom: 67%;" />
