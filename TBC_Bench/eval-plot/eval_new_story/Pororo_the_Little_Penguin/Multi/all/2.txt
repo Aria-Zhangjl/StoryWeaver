@@ -1,0 +1,9 @@
+<style> A beaver and a dinosaur is making cookies in the kitchen. <Loopy> <Crong>
+<style> A polar bear is sweeping the floor for a surprise party in the living room. <Poby>
+<style> A dinosaur and a fox are writing birthday cards in the study room. <Crong> <Eddy>
+<style> A dragon and a gentoo penguin is hanging up colorful balloons in the garden. <Tongtong> <Pororo>
+<style> A beaver place the birthday cake on the table in the dining room. <Loopy>
+<style> A dinosaur happily eat the cake in the pink dining room. <Crong>
+<style> The polar bear washes the dishes in the kitchen. <Poby>
+<style> A fox and a robot play the guitar in the garden. <Eddy> <Rody>
+<style> A dinosaur and a fox send the cards in the post box in the garden. <Crong> <Eddy>

@@ -1,0 +1,9 @@
+<style> A fox and a dinosaur play basketball on the playground. <Eddy> <Crong>
+<style> A beaver having a picnic in the park. <Loopy>
+<style> A Adélie penguin comes to the park with a basket of red apples in hands. <Petty>
+<style> A dragon and a gentoo penguin play badminton on the grass. <Tongtong> <Pororo>
+<style> A beaver and a Adélie penguin are eating red apples in the park. <Loopy> <Petty>
+<style> A polar bear makes orange juice for the picnic in the park. <Poby>
+<style> A dragon and a gentoo penguin sit for the picnic in the park for a rest. <Tongtong> <Pororo>
+<style> A robot blows colorful bubbles in the park. <Rody>
+<style> Some colorful bubbles float over to a dinosaur and a fox, making happy. <Eddy> <Crong>
