@@ -37,9 +37,7 @@ bash sample.sh
 ### Visual Results
 
 #### Single-Character Story Visualization
-
-<img src="visualization/single.png" style="zoom:67%;" />
+![](visualization/single.png)
 
 #### Multi-Character Story Visualization
-
-<img src="visualization/multi.png" style="zoom: 67%;" />
+![](visualization/multi.png)
