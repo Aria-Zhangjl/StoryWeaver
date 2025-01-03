@@ -64,7 +64,7 @@ if is_wandb_available():
     import wandb
 from typing import Optional, Union, Tuple, List, Callable, Dict
 attn_maps = {}
-from train import Knowledge_Encoder, validation
+from train import Autok_encoder, validation
 from dataclasses import dataclass
 from diffusers.utils import deprecate, BaseOutput, is_torch_version, logging
 from einops import rearrange
