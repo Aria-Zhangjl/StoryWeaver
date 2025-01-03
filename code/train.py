@@ -284,9 +284,9 @@ def validation(example, tokenizer, text_encoder, unet, vae, k_encoder,scheduler,
 # Will error if the minimal version of diffusers is not installed. Remove at your own risks.
 # check_min_version("0.28.0.dev0")
 
-class Knowledge_Encoder(nn.Module):
+class Autok_encoder(nn.Module):
     def __init__(self, in_dim, out_dim,Height=512, Width=896, scale=1.0):
-        super(Knowledge_Encoder, self).__init__()
+        super(Autok_encoder, self).__init__()
         self.in_dim = in_dim
         self.out_dim = out_dim
         self.H = Height
