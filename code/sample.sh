@@ -1,17 +1,10 @@
-# pre-trained sd dir
-export MODEL_NAME=''
-# trained ckpt dir
-export CKPT_RANK=''
-# story txt path
-export STORY_TXT_DIR=''
-# time-aware scale
-export SCALE=''
-# sample dir
-export SAMPLE_DIR=''
-# max number of character in per scene
-export MAX_CHAR=''
-# txt dir for appearance description for character
-export CHAR_CAP=''
+export MODEL_NAME='runwayml/stable-diffusion-v1-5' # pre-trained sd dir
+export CKPT_RANK='' # The trained ckpt dir of the customized story world
+export STORY_TXT_DIR='TBC_Benchmark/eval-plot/eval_new_story/Pororo_the_Little_Penguin/Multi/all/1.txt' # story txt path, taking Pororo as an example
+export SCALE='2.5' # time-aware scale
+export SAMPLE_DIR='' # output dir for the generated images
+export MAX_CHAR=2 # max number of character in per scene
+export CHAR_CAP='TBC_Benchmark/train-folder/Pororo_the_Little_Penguin/character' # txt dir for appearance description for character, taking Pororo as an example
 accelerate launch sample.py \
   --pretrained_model_name_or_path=$MODEL_NAME \
   --dataset_dir=$STORY_TXT_DIR \
