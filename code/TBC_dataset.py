@@ -341,6 +341,7 @@ class Benchmark_Eval_ClassConstrains(Dataset):
         resolution=512,
         max_char = 2,
         device='cuda', 
+        type='Pororo',
         ):
         self.data_root = data_root
         self.tokenizer = tokenizer
@@ -348,6 +349,28 @@ class Benchmark_Eval_ClassConstrains(Dataset):
         self.caption_dir = glob(os.path.join(data_root, '*.txt'))
         dirname = os.path.dirname(data_root)
         self.char_cap_dir = glob(os.path.join(dirname, 'character', '*.txt'))
+        if type == 'Pororo':
+            self.char_class={
+                'Crong':'dinosaur',
+                'Eddy': 'fox',
+                'Harry': 'bird',
+                'Loopy': 'beaver',
+                'Petty': 'Adélie penguin',
+                'Poby':'polar bear',
+                'Pororo':'gentoo penguin',
+                'Rody':'robot',
+                'Tongtong':'dragon',
+
+            }
+        elif type == 'Frozen':
+            self.char_class={
+                'Anna':'brown-hair girl',
+                'Elsa': 'white-hair girl',
+                'Kristoff': 'man',
+                'Olaf': 'snowman',
+                'Sven': 'reindeer',
+
+            }
         self.obtain_character_caption(self.char_cap_dir)
         self.max_char = max_char
         self.num_images = len(self.caption_dir)
