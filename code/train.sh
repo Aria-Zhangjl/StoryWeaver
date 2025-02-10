@@ -1,13 +1,8 @@
-# pre-trained sd dir
-export MODEL_NAME=''
-# training data path
-export DATA_DIR=''
-# eval data path
-export TEST_DATA_DIR=''
-# output dir
-export OUTPUT_DIR=''
-# max number of character in per scene
-export MAX_CHAR=''
+export MODEL_NAME='runwayml/stable-diffusion-v1-5'  # pre-trained sd dir
+export DATA_DIR='TBC_Bench/train-folder/Pororo_the_Little_Penguin' # training data path, taking Pororo as an example
+export TEST_DATA_DIR='TBC_Bench/data/eval-plot/eval_train/each/Pororo_the_Little_Penguin' # eval data path, taking Pororo as an example
+export OUTPUT_DIR='output/Pororo' # output dir
+export MAX_CHAR=2 # max number of the characters in per story scene
 
 accelerate launch train.py \
   --pretrained_model_name_or_path=$MODEL_NAME \
