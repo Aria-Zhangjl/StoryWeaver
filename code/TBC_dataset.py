@@ -161,13 +161,34 @@ class BenchMark_Each_ClassConstrains(Dataset):
         center_crop=False,
         random_flip=True,
         max_char = 3,
+        type='Pororo',
         ):
         self.data_root = data_root
         self.tokenizer = tokenizer
         self.image_dir = glob(os.path.join(data_root, 'image/*/*.png'))
         self.character_dir = glob(os.path.join(data_root, 'character/*.txt'))
         self.num_images = len(self.image_dir)
-        self.resolution = resolution   
+        self.resolution = resolution
+        if type == 'Pororo':
+            self.char_class={
+                'Crong':'dinosaur',
+                'Eddy': 'fox',
+                'Harry': 'bird',
+                'Loopy': 'beaver',
+                'Petty': 'Adélie penguin',
+                'Poby':'polar bear',
+                'Pororo':'gentoo penguin',
+                'Rody':'robot',
+                'Tongtong':'dragon',
+            }
+        elif type == 'Frozen':
+            self.char_class={
+                'Anna':'brown-hair girl',
+                'Elsa': 'white-hair girl',
+                'Kristoff': 'man',
+                'Olaf': 'snowman',
+                'Sven': 'reindeer',
+            }            
         self.obtain_character_caption(self.character_dir)
         self.max_char = max_char
 
