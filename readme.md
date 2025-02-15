@@ -10,7 +10,15 @@ This is an official implementation of AAAI 2025 paper [StoryWeaver: A Unified Wo
 - [x] Code Released.
 - [x] Paper Released.
 ## 🖥️  Getting Start
+### Environment
+The codebase is tested on 
+* Python 3.8
 
+For additional python libraries, please install by:
+
+```
+pip install -r requirements.txt
+```
 ### Training StoryWeaver
 
 use the shell script,
@@ -27,6 +35,8 @@ use the shell script,
 bash sample.sh
 ```
 
+> [!TIP]
+> We highly recommend performing Knowledge-Enhanced Spatial Guidance on the coarse class label too for each character in the text descriptions. For example, the coarse label for character Loopy is beaver. Please refer to the [code](https://github.com/Aria-Zhangjl/StoryWeaver/blob/main/code/TBC_dataset.py) of the dataset for more details.
 
 ### Visual Results
 
