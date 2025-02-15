@@ -24,10 +24,32 @@ class TBC_Bench_Single_Story(Dataset):
         max_char = 2,
         device='cuda', 
         caption_dir='',
+        style_dir = '',
+        type='Pororo',
         ):
         self.data_root = data_root
         self.tokenizer = tokenizer
         self.resolution = resolution
+        if type == 'Pororo':
+            self.char_class={
+                'Crong':'dinosaur',
+                'Eddy': 'fox',
+                'Harry': 'bird',
+                'Loopy': 'beaver',
+                'Petty': 'Adélie penguin',
+                'Poby':'polar bear',
+                'Pororo':'gentoo penguin',
+                'Rody':'robot',
+                'Tongtong':'dragon',
+            }
+        elif type == 'Frozen':
+            self.char_class={
+                'Anna':'brown-hair girl',
+                'Elsa': 'white-hair girl',
+                'Kristoff': 'man',
+                'Olaf': 'snowman',
+                'Sven': 'reindeer',
+            } 
         self.frame_texts = []
         with open(data_root, 'r') as f:
             for line in f:
@@ -35,9 +57,8 @@ class TBC_Bench_Single_Story(Dataset):
         
         self.caption_dir = glob(os.path.join(caption_dir, '*.txt'))
         dir_name = os.path.dirname(caption_dir)
-        style_file = os.path.join(dir_name, 'style.txt')
 
-        self.styletext = self.obtain_style(style_file)
+        self.styletext = self.obtain_style(style_dir)
         self.obtain_character_caption()
         self.max_char = max_char
         self.num_images = len(self.frame_texts)
@@ -337,6 +358,7 @@ class Benchmark_Eval_ClassConstrains(Dataset):
     def __init__(
         self,
         data_root,
+        character_root,
         tokenizer,
         resolution=512,
         max_char = 2,
@@ -347,8 +369,7 @@ class Benchmark_Eval_ClassConstrains(Dataset):
         self.tokenizer = tokenizer
         self.resolution = resolution
         self.caption_dir = glob(os.path.join(data_root, '*.txt'))
-        dirname = os.path.dirname(data_root)
-        self.char_cap_dir = glob(os.path.join(dirname, 'character', '*.txt'))
+        self.char_cap_dir = glob(os.path.join(character_root, '*.txt'))
         if type == 'Pororo':
             self.char_class={
                 'Crong':'dinosaur',
