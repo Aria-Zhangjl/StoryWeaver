@@ -937,6 +937,14 @@ def parse_args():
         ),
     )
     parser.add_argument(
+        "--character_dir",
+        type=str,
+        default=None,
+        help=(
+            "The file path to the whole customize character"
+        ),
+    )
+    parser.add_argument(
         "--dataset_config_name",
         type=str,
         default=None,
@@ -1492,6 +1500,7 @@ def main():
 
     test_dataset = Benchmark_Eval_ClassConstrains(
         data_root=args.test_dataset_dir,
+        character_root=args.character_dir,
         tokenizer=tokenizer,
         resolution=512,
         max_char = 2,
