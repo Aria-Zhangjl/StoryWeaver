@@ -864,6 +864,14 @@ def parse_args():
         ),
     )
     parser.add_argument(
+        "--style_dir",
+        type=str,
+        default=None,
+        help=(
+           "The txt file of the style description."
+        ),
+    )
+    parser.add_argument(
         "--caption_dir",
         type=str,
         default=None,
@@ -880,6 +888,11 @@ def parse_args():
             "The resolution for input images, all the images in the train/validation dataset will be resized to this"
             " resolution"
         ),
+    )
+    parser.add_argument(
+        "--data_name",
+        type=str,
+        default='Pororo',
     )
     parser.add_argument(
         "--scale",
@@ -996,7 +1009,7 @@ def main():
     os.makedirs(args.output_dir,exist_ok = True)
     random_seeds = random.sample(range(1, 1024), args.seed_num)
     for each_seed in random_seeds:
-        per_output_dir = os.path.join(output_dir, f'seed_{str(each_seed)}')
+        per_output_dir = os.path.join(args.output_dir, f'seed_{str(each_seed)}')
         os.makedirs(per_output_dir,exist_ok = True)
         os.makedirs(os.path.join(per_output_dir, f'image'),exist_ok = True)
         os.makedirs(os.path.join(per_output_dir, f'text'),exist_ok = True)
@@ -1006,6 +1019,8 @@ def main():
             resolution=512,
             caption_dir=args.caption_dir,
             max_char = args.max_char,
+            style_dir=args.style_dir,
+            type=args.data_name,
             )
 
         # Eval DataLoaders creation:
@@ -1021,7 +1036,7 @@ def main():
             attn_maps = {}
             batch['input_ids'] = batch['input_ids'].to(args.device)
             img_list = []
-            syn_images = validation(batch, tokenizer, text_encoder, unet, vae, k_encoder, noise_scheduler,batch["input_ids"].device, 5 ,each_seed, 100)
+            syn_images,_ = validation(batch, tokenizer, text_encoder, unet, vae, k_encoder, noise_scheduler,batch["input_ids"].device, 5 ,each_seed, 100)
             for syn in syn_images:
                 img_list.append(np.array(syn))
             img_list = np.concatenate(img_list, axis=1)
