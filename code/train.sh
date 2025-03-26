@@ -10,12 +10,12 @@ CUDA_VISIBLE_DEVICES=4 accelerate launch train.py \
   --dataset_dir=$DATA_DIR \
   --test_dataset_dir=$TEST_DATA_DIR \
   --character_dir=$DATA_DIR'/character' \
-  --resolution=256 --center_crop --random_flip \
+  --resolution=512 --center_crop --random_flip \
   --train_batch_size=1 \
-  --gradient_accumulation_steps=1 \
+  --gradient_accumulation_steps=4 \
   --gradient_checkpointing \
-  --checkpointing_steps=2 \
-  --max_train_steps=10 \
+  --checkpointing_steps=200 \
+  --max_train_steps=20000 \
   --learning_rate=7e-06 \
   --max_grad_norm=1 \
   --lr_scheduler="constant" --lr_warmup_steps=0 \
