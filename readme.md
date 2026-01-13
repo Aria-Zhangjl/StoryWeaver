@@ -38,6 +38,7 @@ bash sample.sh
 > [!TIP]
 > We highly recommend performing Knowledge-Enhanced Spatial Guidance on the coarse class label too for each character in the text descriptions. For example, the coarse label for character Loopy is beaver. Please refer to the [code](https://github.com/Aria-Zhangjl/StoryWeaver/blob/main/code/TBC_dataset.py) of the dataset for more details.
 
+The model based on SD1.5 could be download at [here](https://drive.google.com/drive/folders/16zuXLoYvzKCdEffpsJ0wrpJUnUm5NHPc?usp=drive_link).
 ### Visual Results
 
 #### Single-Character Story Visualization
